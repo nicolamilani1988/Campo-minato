@@ -84,13 +84,19 @@
 //     })
 
 //   }
+
+
+
+// Seleziono livello e in base a quello si crea campo e intervallo bombe
 function levelSelect(){
   const emptyField = $("table").html('');
   const selectedLevel = $("input[name='level']:checked").val();
     
   createField(selectedLevel);
+  const bombs = getRndDifferentNumbers (1,(selectedLevel*10),16)
 }
 
+// 0. Funzioni per creazione campo
 function createField(level){
   const rowTot = level;
   for(let i=0;i<rowTot;i++){
@@ -119,15 +125,40 @@ function createRow(rowNum){
   }
 }
 
+// 1.creazione array 16 bombe
+function getRndDifferentNumbers (min,max,totLength){
+    const array = [];
+    while (array.length < totLength){
+      let minRnd = min;
+      let maxRnd = max - minRnd + 1;
+      const numRnd = Math.floor(Math.random()*maxRnd)+minRnd;
+      if(!array.includes(numRnd)){
+        array.push(numRnd);
+      }
+    }
+    console.log(array);
+    return array; 
+  }
+
 
 
 function init(){
   //funzione ok per selezione livello. Da decommentare dopo sviluppo
-  // $("#level-button").click(levelSelect);
+  //$("#level-button").click(levelSelect);
 
-    // funzione da commentare dopo sviluppo, perchè data dal click(levelSelect)
-   createField(5);
 
+  // 0. creo il campo
+  // funzione da commentare dopo sviluppo, perchè data dal click(levelSelect)
+  createField(5);
+
+
+  // 1. creo array di 16 bombe
+  // funzione da commentare dopo sviluppo, perchè data dal click(levelSelect)
+  const bombs = getRndDifferentNumbers (1,50,16);
+
+  // 2. funzione da scatenare al click su .cell
+
+  
 } 
 
 $(init);
