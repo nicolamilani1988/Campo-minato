@@ -5,19 +5,19 @@
 }
 
 .container {
-  width: 500px;
+  width: 70%;
   border: 2px solid black;
   margin: auto;
-  padding: 20px;
+  padding: 20px 0;
 }
 
-h1{
+header>*{
   text-align: center;
   padding: 20px 0;
   color: blue;
 }
 
-#griglia{
+/* #griglia{
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -38,4 +38,29 @@ h1{
   transform: translate(-50%,-50%);
   font-size: 20px;
   font-weight: bolder;
+} */
+
+
+table{
+  margin: auto;
 }
+
+.cell{
+  border: 1px solid red;
+  position: relative;
+}
+
+.number{
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.cover{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+} 

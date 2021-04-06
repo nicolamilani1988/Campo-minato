@@ -2,30 +2,69 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Campo minato</title>
+    <!-- my script -->
+    <script src="script-html.js"></script>
+    <!-- my css -->
     <link rel="stylesheet" href="./css/style.css">
+
   </head>
 
   <body>
 
     <div class="container">
-      <h1>Campo Minato</h1>
-      <ul id="griglia">
 
-          <!--<li class="cell" data-numb="1">
-            <span class="cifra">1</span>
-          </li>
-          <li class="cell">
-            2
-            <input  id="cell-2" class="number" type="checkbox" name="" data-numb="2">
-            <span class="cifra">2</span>
-          </li> -->
+      <header>
+        <!-- titolo -->
+        <h1>Campo Minato</h1>
+        <!-- selezione livello -->
+        <h2>Seleziona il livello</h2>
+        
+        <div id="#level-selector">
+          <label for="Easy">
+            <span>Easy</span>
+            <input type="radio" name="level">
+          </label>
+          <label for="Normal">
+            <span>Normal</span>
+            <input type="radio" name="level">
+          </label>
+          <label for="Hard">
+            <span>Hard</span>
+            <input type="radio" name="level">
+          </label>
+        </div>        
+                 
+      </header>
 
-      </ul>
+
+      <main>
+
+        <table>
+          <!-- prima fila -->
+          <!-- <tr>
+  
+            <td class="cell">
+              <div class="number"></div>
+              <div class="cover"></div>
+            </td>
+  
+          </tr> -->
+          <!-- seconda fila -->
+  
+        </table>
+
+      </main>
+           
 
     </div>
 
-    <script type="text/javascript" src="script-html.js"></script>
+    
 
   </body>
 
