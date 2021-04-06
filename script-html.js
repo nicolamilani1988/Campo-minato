@@ -84,6 +84,12 @@
 //     })
 
 //   }
+function levelSelect(){
+  const emptyField = $("table").html('');
+  const selectedLevel = $("input[name='level']:checked").val();
+    
+    createField(selectedLevel);
+}
 
 function createRow(){
   for (let i = 0;i<10;i++){
@@ -110,8 +116,13 @@ function createField(level){
 }
 
 function init(){
-  
-  const levelSelected = createField(5); //parametro 5 da ricavare alla scelta del livello
+  //funzione ok per selezione livello. Da decommentare dopo sviluppo
+  //$("#level-button").click(levelSelect);
+
+    // funzione da commentare dopo sviluppo, perchè data dal click(levelSelect)
+   createField(5);
+
+
 
 } 
 
