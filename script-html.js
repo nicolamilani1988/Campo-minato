@@ -88,21 +88,7 @@ function levelSelect(){
   const emptyField = $("table").html('');
   const selectedLevel = $("input[name='level']:checked").val();
     
-    createField(selectedLevel);
-}
-
-function createRow(rowNum){
-  
-  const rowNumber = rowNum;
-  for (let i = 0;i<10;i++){
-    const tableRow = $(`#row-${rowNumber}`);
-    tableRow.append(`
-    <td class="cell">
-      <div class="number"><span>${((i+1)+(rowNumber*10)-10)}</span></div>
-      <div class="cover"></div>
-    </td>
-    `)
-  }
+  createField(selectedLevel);
 }
 
 function createField(level){
@@ -117,10 +103,23 @@ function createField(level){
     `)
 
     createRow(rowNum);
-    
-  }
-  
+  }  
 }
+
+function createRow(rowNum){
+  const rowNumber = rowNum;
+  for (let i = 0;i<10;i++){
+    const tableRow = $(`#row-${rowNumber}`);
+    tableRow.append(`
+    <td class="cell">
+      <div class="number"><span>${((i+1)+(rowNumber*10)-10)}</span></div>
+      <div class="cover"></div>
+    </td>
+    `)
+  }
+}
+
+
 
 function init(){
   //funzione ok per selezione livello. Da decommentare dopo sviluppo
@@ -128,8 +127,6 @@ function init(){
 
     // funzione da commentare dopo sviluppo, perchè data dal click(levelSelect)
    createField(5);
-
-
 
 } 
 
