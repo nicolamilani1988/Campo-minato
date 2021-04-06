@@ -91,10 +91,12 @@ function levelSelect(){
     createField(selectedLevel);
 }
 
-function createRow(){
+function createRow(rowNum){
+  
+  const rowNumber = rowNum;
   for (let i = 0;i<10;i++){
-    const table = $("table");
-    table.append(`
+    const tableRow = $(`#row-${rowNumber}`);
+    tableRow.append(`
     <td class="cell">
       <div class="number"></div>
       <div class="cover"></div>
@@ -104,15 +106,20 @@ function createRow(){
 }
 
 function createField(level){
-  const rowNum = level;
-  for(let i=0;i<rowNum;i++){
+  const rowTot = level;
+  for(let i=0;i<rowTot;i++){
     const table = $("table");
+    const rowNum = i+1;
     table.append(`
-      <tr>
-        ${createRow()}
-      </tr>  
+      <tr id="row-${rowNum}">
+        
+      </tr> 
     `)
+
+    createRow(rowNum);
+    
   }
+  
 }
 
 function init(){
