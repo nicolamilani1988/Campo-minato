@@ -98,7 +98,7 @@ function createRow(rowNum){
     const tableRow = $(`#row-${rowNumber}`);
     tableRow.append(`
     <td class="cell">
-      <div class="number"></div>
+      <div class="number"><span>${((i+1)+(rowNumber*10)-10)}</span></div>
       <div class="cover"></div>
     </td>
     `)
@@ -124,7 +124,7 @@ function createField(level){
 
 function init(){
   //funzione ok per selezione livello. Da decommentare dopo sviluppo
-  //$("#level-button").click(levelSelect);
+  // $("#level-button").click(levelSelect);
 
     // funzione da commentare dopo sviluppo, perchè data dal click(levelSelect)
    createField(5);
