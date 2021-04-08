@@ -140,12 +140,6 @@ function getRndDifferentNumbers (min,max,totLength){
     return array; 
   }
 
-  function selectCell(){
-    const clickedCell = $(this);
-    const cellValue = parseInt(clickedCell.find("span").text());
-    console.log(cellValue);
-  }
-
 
 
 function init(){
@@ -162,8 +156,25 @@ function init(){
   // funzione da commentare dopo sviluppo, perchè data dal click(levelSelect)
   const bombs = getRndDifferentNumbers (1,50,16);
 
-  // 2. funzione da scatenare al click su .cell
-  $(".cell").click(selectCell);
+  // 2. individuo valore al click su .cell e lo metto in array
+  const shots = [];
+  const shot = $(".cell").click(function(){
+    const clickedCell = $(this);
+    const cellValue = parseInt(clickedCell.find("span").text());
+    if(!shots.includes(cellValue)){
+      shots.push(cellValue);
+    console.log(shots);
+    } else {
+      alert("Seleziona un'altra cella");
+    }
+
+   // 2a. funzione se il tiro è buono
+
+   //2b. funzione se scoppio
+   
+  });
+
+
   
 } 
 
