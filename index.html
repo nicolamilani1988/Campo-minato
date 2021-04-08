@@ -26,6 +26,7 @@
         <h2>Seleziona il livello</h2>
         
         <div id="#level-selector">
+
           <label for="Easy">
             <span>Easy</span>
             <input type="radio" name="level" value="10">
@@ -43,14 +44,11 @@
           </div>
           
         </div>
-        
-        
-                 
+               
       </header>
 
-
       <main>
-
+        <!-- campo da gioco -->
         <table>
           <!-- prima fila -->
           <!-- <tr>
@@ -61,23 +59,25 @@
             </td>
   
           </tr> -->
-          <!-- seconda fila -->
   
         </table>
 
       </main>
 
+      <!-- contatore di colpi -->
       <footer>
         <div class="counter">
           Colpi sparati: 
           <span>0</span>
         </div>
       </footer>
-           
+
+      <!-- panel nascosto per game-over -->
+      <div id="game-over">
+        <div class="game-over-message">GAME OVER<br>Hai totalizzato<br></div>
+      </div>         
 
     </div>
-
-    
 
   </body>
 
