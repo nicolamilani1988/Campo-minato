@@ -118,7 +118,7 @@ function createRow(rowNum){
     const tableRow = $(`#row-${rowNumber}`);
     tableRow.append(`
     <td class="cell">
-      <div class="number"><span>${((i+1)+(rowNumber*10)-10)}</span></div>
+      <div class="number"><span>${((rowNumber-1)*10)+(i+1)}</span></div>
       <div class="cover"></div>
     </td>
     `)
@@ -140,6 +140,12 @@ function getRndDifferentNumbers (min,max,totLength){
     return array; 
   }
 
+  function selectCell(){
+    const clickedCell = $(this);
+    const cellValue = parseInt(clickedCell.find("span").text());
+    console.log(cellValue);
+  }
+
 
 
 function init(){
@@ -157,7 +163,7 @@ function init(){
   const bombs = getRndDifferentNumbers (1,50,16);
 
   // 2. funzione da scatenare al click su .cell
-
+  $(".cell").click(selectCell);
   
 } 
 
