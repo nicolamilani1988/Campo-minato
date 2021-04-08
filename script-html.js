@@ -156,6 +156,15 @@ function init(){
   // funzione da commentare dopo sviluppo, perchè data dal click(levelSelect)
   const bombs = getRndDifferentNumbers (1,50,16);
 
+  //1a. coloro le celle bomba
+  bombs.forEach(elem =>{
+    $(".cell").find("span").filter(function(){
+      if($(this).text() == elem){
+        $(this).addClass("red-bomb")
+      }     
+    })
+  })
+
   // 2. individuo valore al click su .cell e lo metto in array
   const shots = [];
   const shot = $(".cell").click(function(){
