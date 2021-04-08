@@ -63,4 +63,16 @@ table{
   left: 0;
   right: 0;
   bottom: 0;
+  background-color: gray;
 } 
+
+.counter{
+  text-align: center;
+  margin-top: 20px;
+}
+
+.red-bomb{
+  background-color: red;
+  background-image: url("../img/bomb.png");
+  background-size: cover;
+}

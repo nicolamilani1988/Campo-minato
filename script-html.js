@@ -118,7 +118,7 @@ function createRow(rowNum){
     const tableRow = $(`#row-${rowNumber}`);
     tableRow.append(`
     <td class="cell">
-      <div class="number"><span>${((rowNumber-1)*10)+(i+1)}</span></div>
+      <div class="number" style="visibility:hidden"><span>${((rowNumber-1)*10)+(i+1)}</span></div>
       <div class="cover"></div>
     </td>
     `)
@@ -163,15 +163,25 @@ function init(){
     const cellValue = parseInt(clickedCell.find("span").text());
     if(!shots.includes(cellValue)){
       shots.push(cellValue);
-    console.log(shots);
+      clickedCell.find(".cover").hide();
+      $(".counter").find("span").text(shots.length);
+      console.log(shots);
     } else {
       alert("Seleziona un'altra cella");
     }
 
-   // 2a. funzione se il tiro è buono
+   // 2a. funzione se scoppio
+    if(bombs.includes(cellValue)){
 
-   //2b. funzione se scoppio
+      clickedCell.addClass("red-bomb");
+      
+    } else { //2b. funzione se il tiro è buono
+
+      console.log("mancato");    
+
+    }
    
+
   });
 
 
